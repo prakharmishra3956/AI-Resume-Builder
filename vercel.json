@@ -1,5 +1,8 @@
 {
   "buildCommand": "npm run build",
   "installCommand": "npm install --include=optional",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "env": {
+    "TAILWINDCSS_ENGINE": "js"
+  }
 }
