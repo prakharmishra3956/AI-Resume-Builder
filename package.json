@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "postinstall": "prisma generate && npm install --include=optional sharp"
+    "postinstall": "prisma generate && npm install --include=optional sharp && npm rebuild lightningcss"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.31.4",
