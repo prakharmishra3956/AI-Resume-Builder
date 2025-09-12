@@ -19,8 +19,30 @@ export default function ResumePreview({
   className,
 }: ResumePreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isClient, setIsClient] = useState(false);
 
   const { width } = useDimensions(containerRef);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Prevent hydration mismatch by not rendering dimensions-dependent content on server
+  if (!isClient) {
+    return (
+      <div
+        className={cn(
+          "aspect-[210/297] h-fit w-full bg-white text-black",
+          className,
+        )}
+        ref={containerRef}
+      >
+        <div className="flex h-full w-full items-center justify-center">
+          <div className="animate-pulse text-gray-400">Loading...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div

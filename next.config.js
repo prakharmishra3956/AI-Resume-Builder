@@ -51,8 +51,16 @@ const nextConfig = {
   outputFileTracing: false,
   // Disable source maps
   productionBrowserSourceMaps: false,
-  // Use standalone output to avoid permission issues
-  output: "standalone",
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "6m0cxj8fgdmf3ibh.public.blob.vercel-storage.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

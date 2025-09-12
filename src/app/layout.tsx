@@ -1,7 +1,7 @@
 
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 import { Toaster } from "sonner";
 
@@ -25,7 +25,7 @@ export default function RootLayout({
         <body>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
