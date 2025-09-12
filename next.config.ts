@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
     serverActions: {
       bodySizeLimit: "4mb",
     },
+    // disable LightningCSS on Vercel (fallback to PostCSS)
+    optimizeCss: false,
   },
 
   images: {
