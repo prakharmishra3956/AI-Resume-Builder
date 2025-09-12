@@ -41,7 +41,7 @@ export default function ResumeItem({ resume }: ResumeItemProps) {
   const wasUpdated = resume.updatedAt !== resume.createdAt;
 
   return (
-    <div className="group hover:border-border transition-color bg-secondary relative rounded-lg border border-transparent p-3">
+    <div className="transition-color group relative rounded-lg border border-transparent bg-secondary p-3 hover:border-border">
       <div className="space-y-3">
         <Link
           href={`/editor?resumeId=${resume.id}`}
@@ -53,7 +53,7 @@ export default function ResumeItem({ resume }: ResumeItemProps) {
           {resume.description && (
             <p className="line-clamp-2 text-sm">{resume.description}</p>
           )}
-          <p className="text-muted-foreground text-xs">
+          <p className="text-xs text-muted-foreground">
             {wasUpdated ? "Updated" : "Created"} on{" "}
             {formatDate(resume.updatedAt, "MMM d, yyyy h:mm a")}
           </p>
@@ -90,7 +90,7 @@ function MoreMenu({ resumeId, onPrintClick }: MoreMenuProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute top-0.5 right-0.5 opacity-0 transition-opacity group-hover:opacity-100"
+            className="absolute right-0.5 top-0.5 opacity-0 transition-opacity group-hover:opacity-100"
           ></Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
@@ -139,7 +139,7 @@ function DeleteConfirmationDialog({
       try {
         await deleteResume(resumeId);
         onOpenChange(false);
-      } catch (error) {
+      } catch {
         toast({
           variant: "destructive",
           description: "Something went wrong. Please try again.",

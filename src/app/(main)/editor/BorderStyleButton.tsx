@@ -21,13 +21,13 @@ export default function BorderStyleButton({
   borderStyle,
   onChange,
 }: BorderStyleButtonProps) {
- const subscriptionLevel = useSubscriptionLevel();
+  const subscriptionLevel = useSubscriptionLevel();
 
- const premiumModal = usePremiumModal();
+  const premiumModal = usePremiumModal();
 
   function handleClick() {
-    if(!canUseCustomizations(subscriptionLevel)){
-      premiumModal.setOpen(true)
+    if (!canUseCustomizations(subscriptionLevel)) {
+      premiumModal.setOpen(true);
       return;
     }
 
@@ -50,7 +50,7 @@ export default function BorderStyleButton({
       title="Change border style"
       onClick={handleClick}
     >
-      <Squircle className="size-5" />
+      <Icon className="size-5" />
     </Button>
   );
 }

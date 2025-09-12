@@ -1,4 +1,3 @@
-import { School } from "lucide-react";
 import { z } from "zod";
 
 // Reusable optional string schema
