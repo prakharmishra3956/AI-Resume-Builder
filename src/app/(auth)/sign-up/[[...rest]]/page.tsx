@@ -1,9 +1,10 @@
-import {SignUp} from "@clerk/nextjs";
+"use client";
+import { SignUp } from "@clerk/nextjs";
 
-export default function Page(){
-    return (
-        <main className="flex h-screen items-center justify-center">
-            <SignUp/>
-        </main>
-    );
+export default function Page() {
+  return (
+    <main className="flex h-screen items-center justify-center">
+      <SignUp />
+    </main>
+  );
 }
