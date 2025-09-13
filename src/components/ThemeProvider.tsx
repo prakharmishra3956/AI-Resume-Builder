@@ -57,12 +57,14 @@
 //     </DropdownMenu>
 //   );
 // }
- 
 
 // src/components/ThemeProvider.tsx
 "use client";
 
-import { ThemeProvider as NextThemesProvider, type ThemeProviderProps } from "next-themes";
+import {
+  ThemeProvider as NextThemesProvider,
+  type ThemeProviderProps,
+} from "next-themes";
 import { PropsWithChildren } from "react";
 
 export default function ThemeProvider({
