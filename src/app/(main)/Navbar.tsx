@@ -57,7 +57,10 @@
 "use client";
 
 import logo from "@/assets/logores.png";
-import ThemeToggle from "@/components/ThemeToggle"; // <-- default import (make sure ThemeToggle.tsx uses "export default")
+import ThemeToggle
+
+
+from "@/components/ThemeToggle"; // <-- default import (make sure ThemeToggle.tsx uses "export default")
 import { UserButton } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { CreditCard } from "lucide-react";
