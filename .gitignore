@@ -1,43 +1,58 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# Testing
+coverage/
 
-# testing
-/coverage
+# Next.js
+.next/
+out/
 
-# next.js
-/.next/
-/out/
+# Production
+build/
+dist/
 
-# production
-/build
-
-# misc
+# Misc
 .DS_Store
 *.pem
 
-# debug
+# Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# Local env files
+.env*.local
+.env
 
-# vercel
+# Vercel
 .vercel
 
-# typescript
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
 
-/src/generated/prisma
+# Generated code
+src/generated/
+
+# Windows system directories that cause permission issues
+C:/Users/acer/Local Settings/
+C:/Users/acer/Application Data/
+C:/Users/acer/Cookies/
+C:/Users/acer/AppData/
+C:/Users/acer/Desktop/
+C:/Users/acer/Documents/
+C:/Users/acer/Downloads/
+C:/Users/acer/Pictures/
+C:/Users/acer/Videos/
+C:/Users/acer/Music/
+C:/Program Files/
+C:/Program Files (x86)/
+C:/Windows/
+C:/System Volume Information/
+C:/ProgramData/
+C:/Recovery/
+C:/Boot/
+C:/PerfLogs/

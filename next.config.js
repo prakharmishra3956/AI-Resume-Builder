@@ -40,17 +40,14 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Disable file tracing on Windows to avoid EPERM on protected user folders
+  outputFileTracing: false,
   experimental: {
-    serverActions: {
-      bodySizeLimit: "4mb",
-    },
-    // disable LightningCSS on Vercel (fallback to PostCSS)
+    // Constrain file tracing to this project root to avoid scanning user profile dirs on Windows
+    outputFileTracingRoot: __dirname,
+    // disable LightningCSS on Windows if it causes issues (falls back to PostCSS)
     optimizeCss: false,
   },
-  // Completely disable output file tracing to prevent permission issues
-  outputFileTracing: false,
-  // Disable source maps
-  productionBrowserSourceMaps: false,
   images: {
     remotePatterns: [
       {
@@ -63,4 +60,5 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = nextConfig
+;
