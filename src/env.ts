@@ -3,10 +3,16 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    // Prisma uses this for the datasource (see prisma/schema.prisma)
-    DATABASE_URL: z.string().min(1),
+    POSTGRES_URL: z.string().min(1),
+    POSTGRES_PRISMA_URL: z.string().min(1),
+    POSTGRES_URL_NO_SSL: z.string().min(1),
+    POSTGRES_DATABASE: z.string().min(1),
+    POSTGRES_PASSWORD: z.string().min(1),
+    POSTGRES_HOST: z.string().min(1),
+    POSTGRES_USER: z.string().min(1),
+    POSTGRES_URL_NON_POOLING: z.string().min(1),
     CLERK_SECRET_KEY: z.string().min(1),
-    BLOB_READ_WRITE_TOKEN: z.string().optional(),
+    BLOB_READ_WRITE_TOKEN: z.string().min(1),
     STRIPE_SECRET_KEY: z.string().min(1),
     STRIPE_WEBHOOK_SECRET: z.string().min(1),
   },
