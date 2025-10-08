@@ -40,13 +40,18 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable file tracing on Windows to avoid EPERM on protected user folders
-  outputFileTracing: false,
-  experimental: {
-    // Constrain file tracing to this project root to avoid scanning user profile dirs on Windows
-    outputFileTracingRoot: __dirname,
-    // disable LightningCSS on Windows if it causes issues (falls back to PostCSS)
-    optimizeCss: false,
+  // Constrain file tracing to this project root (Next 15 moved this to top-level)
+  outputFileTracingRoot: __dirname,
+  // Exclude protected/junction Windows user directories that cause EPERM during tracing
+  outputFileTracingExcludes: {
+    "*": [
+      // Broadly exclude all user profile directories on Windows to avoid EPERM
+      "C:/Users/**",
+      "C:\\Users\\**",
+      "C:/Users/**/Application Data/**",
+      "C:/Users/**/AppData/**",
+      "C:/Users/**/Cookies/**",
+    ],
   },
   images: {
     remotePatterns: [
@@ -60,5 +65,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig
-;
+module.exports = nextConfig;
